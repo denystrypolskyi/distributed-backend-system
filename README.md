@@ -19,7 +19,6 @@ This is a pet microservices project demonstrating interaction between multiple s
 | Service         | Description                        | Communication                                                         | Repository                              |
 |-----------------|----------------------------------|----------------------------------------------------------------------|---------------------------------------|
 | **auth**        | Authentication and authorization | REST API                                                             | [auth-service](https://github.com/denystrypolskyi/auth-service)      |
-| **user**        | User management                  | REST API                                                             | [user-service](https://github.com/denystrypolskyi/user-service)      |
 | **product**     | Product management               | REST API                                                             | [product-service](https://github.com/denystrypolskyi/product-service)|
 | **order**       | Order creation and management    | REST API + RabbitMQ (sending events to notifications) + Kafka (sending logs to topics) | [order-service](https://github.com/denystrypolskyi/order-service)    |
 | **notification**| Sending notifications (email)    | RabbitMQ (queue subscriber)                                          | [notification-service](https://github.com/denystrypolskyi/notification-service)|
