@@ -148,7 +148,6 @@ services:
 
 
 volumes:
-  user_postgres_data:
   auth_postgres_data:
   product_postgres_data:
   order_postgres_data:
