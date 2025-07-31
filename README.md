@@ -2,10 +2,12 @@
 Java, Spring Boot, Docker, PostgreSQL, Kafka, RabbitMQ, REST, JUnit + Mockito
 
 
-
 ## About the project
 
 This is a pet microservices project demonstrating interaction between multiple services using modern technologies:
+
+> **Note:** In a production environment, role checks would be added for protected endpoints. For example, `getAllUsers` should be restricted to admins.
+
 
 - Multiple microservices with separate PostgreSQL databases  
 - Inter-service communication via REST API  
