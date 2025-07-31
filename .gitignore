@@ -1,0 +1,8 @@
+.env
+
+order-service
+product-service
+notification-service
+log-consumer-service
+auth-service
+.vscode
