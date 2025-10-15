@@ -1,24 +1,38 @@
-## Tech stack
-Java, Spring Boot, Docker, PostgreSQL, Kafka, RabbitMQ, REST, JUnit + Mockito
+# 🏗️ Distributed Backend System
+
+This is a pet microservices project that simulates a simple e-commerce platform.
+It allows users to register, create and manage products, place orders, and automatically receive **email notifications** with order details such as total cost and purchased items.
 
 
-## About the project
+## 🚀 Features
 
-This is a pet microservices project demonstrating interaction between multiple services using modern technologies:
+- Multiple independent microservices with separate PostgreSQL databases  
+- Inter-service communication using REST API  
+- Asynchronous event-based communication with RabbitMQ (Order → Notification)  
+- Centralized logging with Kafka and a dedicated `log-consumer` service  
+- JWT-based user authentication  
+- Unit and integration testing with JUnit and Mockito  
+- Dockerized setup for easy local development
 
-- Multiple microservices with separate PostgreSQL databases  
-- Inter-service communication via REST API  
-- Asynchronous communication using RabbitMQ (Order → Notification)  
-- Event logging with Kafka and a separate `log-consumer` service  
-- Test coverage using JUnit and Mockito in the **order-service**
-- Running services in Docker containers for easy local development  
 
-## Microservices and communication
+## 🧩 Microservices Overview
 
-| Service         | Description                        | Communication                                                         | Repository                              |
-|-----------------|----------------------------------|----------------------------------------------------------------------|---------------------------------------|
-| **auth**        | Authentication and authorization | REST API                                                             | [auth-service](https://github.com/denystrypolskyi/auth-service)      |
-| **product**     | Product management               | REST API                                                             | [product-service](https://github.com/denystrypolskyi/product-service)|
-| **order**       | Order creation and management    | REST API + RabbitMQ (sending events to notifications) + Kafka (sending logs to topics) | [order-service](https://github.com/denystrypolskyi/order-service)    |
-| **notification**| Sending notifications (email)    | RabbitMQ (queue subscriber)                                          | [notification-service](https://github.com/denystrypolskyi/notification-service)|
-| **log-consumer**| Reading logs from Kafka          | Kafka                                                               | [log-consumer-service](https://github.com/denystrypolskyi/log-consumer-service)|
+| Service | Description | Communication | Repository |
+|----------|--------------|----------------|-------------|
+| **Auth Service** | Authentication and authorization (user registration, login, JWT). | REST API | [auth-service](https://github.com/denystrypolskyi/auth-service) |
+| **Product Service** | Product management (create, update, list products). | REST API | [product-service](https://github.com/denystrypolskyi/product-service) |
+| **Order Service** | Order creation and management. Sends events to RabbitMQ and logs to Kafka. | REST API + RabbitMQ + Kafka | [order-service](https://github.com/denystrypolskyi/order-service) |
+| **Notification Service** | Listens to RabbitMQ messages and sends order confirmation emails. | RabbitMQ | [notification-service](https://github.com/denystrypolskyi/notification-service) |
+| **Log Consumer Service** | Consumes Kafka topics for centralized logging. | Kafka | [log-consumer-service](https://github.com/denystrypolskyi/log-consumer-service) |
+
+
+## 📦 Tech Stack
+
+- Java
+- Spring Boot
+- Docker
+- PostgreSQL
+- Kafka
+- RabbitMQ
+- REST API
+- JUnit + Mockito
